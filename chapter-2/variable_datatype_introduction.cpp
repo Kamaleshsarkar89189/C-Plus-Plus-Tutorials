@@ -94,5 +94,23 @@ Variable Initialization
      signed short int unsigned_short_int { 345};
 
      int int_var {55}; //4 bytes
+     signed signed_var {66};
+     signed int signed_int{77};
+     unsigned int unsigned_int{77};
+
+     long long_var{88}; //4 or 8 bytes
+     int long long_int{33};
+     signed long signed_long {44};
+     signed long int unsiged_long_int {44};
+
+     lonh long long_long {334};//8 bytes
+     long long int long_long_int {999};
+     signed long long signed_long_long {444};
+     signed long long int signed_long_long_int {1244};
+     unsigned long long int unsigned_long_long_int {1234};
+
+
+        Note: These modifiers only apply to integral types: those in which you can store decimal numbers
+        
 
 */
