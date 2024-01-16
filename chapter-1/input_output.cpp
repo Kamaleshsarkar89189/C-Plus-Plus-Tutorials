@@ -28,7 +28,7 @@ int main(){
 
     std::string full_name;
     int age2;
-    std::cout << "Please type your full mane and age: " <<std::endl;
+    std::cout << "Please type your full name and age: " <<std::endl;
 
     std::getline(std::cin,full_name);
 
