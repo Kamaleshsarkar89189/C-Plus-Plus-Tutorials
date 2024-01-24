@@ -136,3 +136,101 @@ Compound Assignment Operators
     value  %=11;
     std::cout << "The value is after %= : " << value << std::endl;
 
+Relational Operators : Comparing Stuff
+
+std::cout << "Number1 : " << number1 << std::endl;
+    std::cout << "number2 : " << number2 << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Comparing variables" <<std::endl;
+
+    std::cout << std::boolalpha ; // Make bool show up as true/false instead of 1/0
+    // Stress the need for parentheses here
+    std::cout << "number1 < number2 : " << (number1 < number2) << std::endl;
+    std::cout << "number1 <= number2 : " << (number1 <= number2) << std::endl;
+    std::cout << "number1 > number2 : " << (number1 > number2) << std::endl;
+    std::cout << "number1 >= number2 : " << (number1 >= number2) << std::endl;
+    std::cout << "number1 == number2 : " << (number1 == number2) << std::endl;
+    std::cout << "number1 != number2 : " << (number1 != number2) << std::endl;
+    
+     std::cout << std::endl;
+     std::cout << "Store comparison result and use it later" << std::endl;
+
+     bool result = (number1 == number2);
+     std::cout << "Result : " << result << std::endl;
+
+
+
+Logical Operators
+    AND-------> &&
+    OR--------> ||
+    NOT-------> !
+    
+
+    AND Operators
+
+        a             b               a && b
+        false        false            false
+        false        true             false
+        true         false            false
+        true         true             true
+
+    
+    OR Operators
+
+        a           b               a || b
+        false       false           false
+        false       true            true
+        true        false           true
+        true        true            true
+
+
+    NOT Operators
+
+        a               !a
+        true            false
+        false           true
+
+
+
+
+bool a {true};
+    bool b {false};
+    bool c {true};
+
+    std::cout << std::boolalpha;
+    std::cout << "a : " << a << std::endl;
+    std::cout << "b : " << b << std::endl;
+    std::cout << "c : " << c << std::endl;
+
+
+    // AND : Evaluates to true when all operands are true.
+    // A single false operand will drag
+    // the entire expression to evaluating false.
+
+    std::cout << std::endl;
+    std::cout << "Basic AND operations" << std::endl;
+
+    std::cout << "a && b : " << (a && b) << std::endl;
+    std::cout << "a && c : " << (a && c) << std::endl;
+    std::cout << "a && b && c: " << (a && b && c) << std::endl;
+
+
+    // OR : Evaluates to true when at least one operand true.
+    // A single true operand will push the entire expression to evaluating true.
+    std::cout << std::endl;
+    std::cout << "Basic OR operators" << std::endl;
+    std::cout << "a || b : " << (a || b) << std::endl;
+    std::cout << "a || c : " << (a || c) <<std::endl;
+    std::cout << "a || b || c : " << (a || b || c) << std::endl;
+
+
+    // NOT : Negates whateve operand you put it with
+    std::cout << std::endl;
+    std::cout << "Basic NOT operators" << std::endl;
+    std::cout << "!a : " << !a << std::endl;
+    std::cout << "!b : " << !b << std::endl;
+    std::cout << "!c : " << !c << std::endl;
+
+    // Combine logical operators in expression
+    std::cout << "!(a && b) || c : " << (!(a && b) || c) << std::endl;
