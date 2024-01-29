@@ -234,3 +234,53 @@ bool a {true};
 
     // Combine logical operators in expression
     std::cout << "!(a && b) || c : " << (!(a && b) || c) << std::endl;
+
+
+
+    Output Formatting
+
+        Header file 
+        #include<ios>
+        #include<iomanip>
+
+        There are lot of Library funcion in cpp 
+
+        1. std::endl;
+        2. std::flush;
+        2. std:showpoint;
+        2. std::right;
+        2. std::boolalpha;
+        2. std::setfill;
+        2. std::left;
+        2. std::internal;
+        2. std::setw;
+        2. std::hex;
+        2. std::fixed;
+        2. std::setprecision;
+        2. std::dec;
+        2. std::scientific;
+        2. std::showbase;
+        2. std::uppercase;
+        2. std::showpos;
+        2. std::oct;
+
+    For more information
+        https://en.cppreference.com/w/cpp/io/manip
+
+    1. std::endl ---> 
+            std::cout << "Hello";
+            std::cout << "World";
+
+            std::cout << std::endl;
+
+            std::cout << "------------" << std::endl;
+
+            std::cout << "Hello" << std:endl;
+            std::cout << "World" << std:endl;
+            
+            std::cout << std::endl;
+
+            std::cout << "Hello\n";
+            std::cout << "World\n";
+
+
