@@ -38,5 +38,30 @@ int main(){
     std::cout << "3.654 round to : " << std::round(3.654) << std::endl;
     std::cout << "2.5 is round to : " << std::round(2.5) << std::endl;
     std::cout << "2.4 is round to : " << std::round(2.4) << std::endl;
+
+    std::cout << std::endl;
+
+    //Weired Integral Types
+
+        // Integral types less then 4 bytes in size don't support arithmetic operations
+
+        short int var1 {10};
+        short int var2 {20};
+
+        char var3 {40};
+        char var4 {50};
+
+        std::cout << "Size of var1 : " << sizeof(var1) << std::endl;
+        std::cout << "Size of var2 : " << sizeof(var2) << std::endl;
+        std::cout << "Size of var3 : " << sizeof(var3) << std::endl;
+        std::cout << "Size of var4 : " << sizeof(var4) << std::endl;
+
+        auto result1 = var1 + var2; // Conversion to int
+        auto result2 = var3 + var4;
+        
+        std::cout << "Size of result1 : " << sizeof(result1) << std::endl;
+        std::cout << "Size of result2 : " << sizeof(result2) << std::endl;
+
+        // The same behavior is present on other operators like bitwise shift operators ( >> and <<) .
     return 0;
-}
+} 
