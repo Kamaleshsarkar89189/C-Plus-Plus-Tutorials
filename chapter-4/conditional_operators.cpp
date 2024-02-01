@@ -179,6 +179,67 @@ int main(){
     std::cout << "max : " << max << std::endl;
 
     //Loops
+     /*
+     It's allow to do repetitive tasks relatively easily, suppose we have a task to print a message 10 times we can go down and do it like this but if we asked to print the message 10000 times than to do this is not a easy work to do this so c++ provide a way to do 
+     that relatively easily.
 
+        There are 4 types of loops:
+
+            1.For loop
+            2.Range based for loop
+            3.While loop
+            4.Do while loop
+
+
+     */
+    // 1. For loop
+    //     syntax:
+        
+            for(unsigned int i{}; i<10; ++i){
+                std::cout << "I'm Kamalesh" << std::endl;
+            }
+
+        /*Pillars of any loop
+        --> Iterator
+        --> Starting Point
+        --> Test(controls when the loop stops)
+        --> Increment(Decrement)
+        --> Loop body 
+        */
+
+            //Use size_t : A representation of some unsigned int for positive numbers [sizes]
+            for(size_t i{0}; i < 10; ++i){
+                std::cout << i << " I love Program" << std::endl;
+            }
+
+        //sizeof(size_t)
+        std::cout << "sizeof(size_t) : " << sizeof(size_t) << std::endl;
+
+        //Scope of the iterator
+        for(size_t i{0}; i < 10; ++i){
+            std::cout << i << " : I love c++" << std::endl;
+        }
+        // std::cout << "i :" << i << std::endl; Compiler Error : i is not in scope
+
+        //Iterator declared outside the loop
+        size_t i{0}; // Iterator defined outside
+        for(i; i < 10; ++i){
+            std::cout << "I love C++" << std::endl;
+        }
+        std::cout << "i :" << i << std::endl;
+
+        //Leave out the iterator declaration part
+
+        size_t i{0}; 
+        for( ; i < 10; ++i){
+            std::cout << "I love C++" << std::endl;
+        }
+        std::cout << "i :" << i << std::endl;
+        // //Don't hard code values : BAD!
+        // const size_t COUNT{100};  
+        // for(size_t i{0}; i < COUNT; ++i){
+        //     std::cout << "I love C++" << std::endl;
+        // }
+        // std::cout << "Loop done!" << std::endl;
     return 0;
-}
+} 
