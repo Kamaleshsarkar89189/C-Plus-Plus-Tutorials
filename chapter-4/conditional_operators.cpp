@@ -222,24 +222,84 @@ int main(){
         // std::cout << "i :" << i << std::endl; Compiler Error : i is not in scope
 
         //Iterator declared outside the loop
-        size_t i{0}; // Iterator defined outside
-        for(i; i < 10; ++i){
-            std::cout << "I love C++" << std::endl;
-        }
-        std::cout << "i :" << i << std::endl;
+        // size_t i{0}; // Iterator defined outside
+        // for(i; i < 10; ++i){
+        //     std::cout << "I love C++" << std::endl;
+        // }
+        // std::cout << "i :" << i << std::endl;
 
         //Leave out the iterator declaration part
 
-        size_t i{0}; 
-        for( ; i < 10; ++i){
-            std::cout << "I love C++" << std::endl;
-        }
-        std::cout << "i :" << i << std::endl;
+        // size_t i{0}; 
+        // for( ; i < 10; ++i){
+        //     std::cout << "I love C++" << std::endl;
+        // }
+        // std::cout << "i :" << i << std::endl;
         // //Don't hard code values : BAD!
         // const size_t COUNT{100};  
         // for(size_t i{0}; i < COUNT; ++i){
         //     std::cout << "I love C++" << std::endl;
         // }
         // std::cout << "Loop done!" << std::endl;
+
+        //while loop
+        std::cout << "Using while loop" << std::endl;
+        const unsigned int COUNT {10};
+        unsigned int i {0};
+        while ( i < COUNT){
+            std::cout << "I love C++" << std::endl;
+            ++i;
+        }
+
+
+        //Do while loop
+
+            const int COUNT {10};
+            size_t i {0};// Initialization
+
+            do{
+                std::cout << "[" << i << "] : I love C++" << std::endl;
+                ++i; // Increment
+            }
+            while(i < COUNT); // Test
+
+            // Run the body then checks
+
+
+
+
+
+
+
+    /* Arrays
+        Declaring and Using Arrays
+        // Declaring an array
+        int
+        
+
+
+    */
+    // Initialize the array at declaration
+    //Declare and intitialize at the same time 
+    std::cout << std::endl;
+    std::cout << "Declare and initialize at the same time  " << std::endl;
+
+    double salaries[5]; {12.3, 7.4, 89.5, 67.4, 45.5};
+    for(size_t i{0}; i < 5; ++i){
+        std::cout << "salary[" << i << "] : " << salaries[i] << std::endl;
+    }
+
+    //Array Initialization : Omitting elements
+    //If you don't inititalize all the elements, those you leave out are initialized to 0
+    std::cout << std::endl;
+    std::cout << "Leaving out some elements un-initialized : " << std::endl;
+
+    int families[5] {34, 34,55};
+
+    for(size_t i{0}; i < 5; ++i){
+        std::cout << "Families[" << i << "] : " << std::endl;
+    }
+
+
     return 0;
 } 
