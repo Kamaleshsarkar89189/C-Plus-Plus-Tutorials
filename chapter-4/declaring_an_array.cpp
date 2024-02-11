@@ -32,7 +32,7 @@ int main(){
         std::cout << "Scores[" << i << "] : " << scores[i] << std::endl;
     }
     //Writing data with a loop
-    int scores[10];
+    // int scores[10];
     std::cout << std::endl;
     std::cout << "Writing data in array with loop :" << std::endl;
 
@@ -40,5 +40,31 @@ int main(){
     for(size_t i{0}; i<10; ++i){
         std::cout << "scores[" << i << "] :" << scores[i] << std::endl;
     }
+
+    //Declare array
+     char message [5] {'H', 'e', 'l', 'l', 'o'};
+    //Print out the array through looping 
+    std::cout << "Message : ";
+    for( auto c : message){
+        std::cout << c ;
+    }
+    std::cout << std::endl;
+    std::cout << "Size : " << sizeof(message) << std::endl;
+
+    //Change characters in our array
+    message[1] = 'a';
+    //Print out the array through looping 
+    std::cout << "Message : ";
+    for( auto c : message){
+        std::cout << c ;
+    }
+    std::cout << std::endl;
+    //If a character array is null terminated, it's called as C-String
+
+    char message1 [] {'H', 'e', 'l', 'l', 'o', '\0'};
+    std::cout << "Message1 : " << message1 << std::endl;
+
+    char message2 [6] {'H', 'e', 'l', 'l', 'o'}
+
     return 0;
 }

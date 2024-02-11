@@ -300,6 +300,75 @@ int main(){
         std::cout << "Families[" << i << "] : " << std::endl;
     }
 
+    //Arrays of characters
+    // Declare array
+    char message [5] {'H', 'e', 'l', 'l', 'o'};
+    //Print out the array through looping 
+    std::cout << "Message : ";
+    for( auto c : message){
+        std::cout << c ;
+    }
+    std::cout << std::endl;
+    std::cout << "Size : " << std::sizeof(message) << std::endl;
+
+    //Can also modify elements of the char array
+
+    std::cout << std::endl;
+    std::cout << "Modify array data : " << std::endl;
+
+    message[1] = 'a';
+    
+    //Print out the array
+    std::cout << "Message : ";
+    for(auto c : message){
+        std::cout << c;
+    }
+
+    //Direct print out 
+    char message [5] {'K', 'i', 's', 'a', 'n'};
+    std::cout << "Message : " << message << std::endl;
+
+    //Null termination 
+    char message [5] {'K', 'i', 's', 'a', 'n', \0};
+    std::cout << "Message : " << message << std::endl;
+
+    //Proper null termiantion
+    char message1[] {'K', 'i', 's', 'a', 'n', '\0'};
+    std::cout << "Message1 : " << message1 << std::endl;
+    std::cout << "Size : " << std::size(Message1) << std::endl;
+
+    //Auto filled in null chracters
+    char message2[6] {'K', 'i', 's', 'a', 'n'};
+
+    std::cout << "Message2 : " << message2 << std::endl;
+    std::cout << "Size : " << std::size(message2) << std::endl;
+
+    //Looks may be deceiving 
+    char message3 [] {'K', 'i', 's', 'a', 'n'}; // This is not a c strinng, as there is not null character
+    std::cout << "Message3 : " << message3 << std::endl;
+    std::cout << "Size : " << std::size(Message3) << std::endl; // Will probably print some garbage after our Kisan message
+
+
+    //Literal C - Strings
+    //Can also define a literal C string 
+    std::cout << std::endl;
+    char messaage4[] {"Kisan"}; // An implicit '\0' character is appernded to the end of the string, making it a c string 
+
+    std::cout << "Message4 : " << messaage4 << std::endl;
+    std::cout << "Size : " << std::size(messaage4) << std::endl;
+
+    //Can even have spaces between characters
+    std::cout << std::end;
+    char messaage5[] {"Kisan Sarkar"};
+    std::cout << "Message5 : " << messaage5 << std::endl;
+    std::cout << "Size : " << sizeof(messaage5) << std::endl;
+
+    //Arrays of char are special 
+    //Can't direct print arrays other than that of chars
+    std::cout << std::endl;
+    int number[] {1,2,3,4,5,6,7,8,9,0};
+    std::cout << "Number : " << number << std::endl;
+
 
     return 0;
 } 

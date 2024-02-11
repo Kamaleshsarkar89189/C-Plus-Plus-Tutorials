@@ -45,5 +45,29 @@ int main(){
         sum += element;
     }
     std::cout << "Score sum : " << sum << std::endl;
+
+    //Size of an array [c++17]
+    // int scores[] {10,12,13,14,15};
+    // //Can get the size with std::size
+    // std::cout << "Scores size : " << std::size(scores) << std::endl;
+
+    // //print data out 
+    // for( size_t i{0}; i < std::size(scores); ++i){
+    //     std::cout << "Scores[" << i << "] : " << scores[i] << std::endl;
+    // }
+
+    //Array size with sizeof
+
+    std::cout << "size of scores : " << sizeof(scores) << std::endl;
+    std::cout << "size of scores[0] : " << sizeof(scores[0]) << std::endl;
+    std::cout << "score item count : " << sizeof(scores)/ sizeof(scores[0]) << std::endl;
+
+    size_t count {sizeof(scores)/ sizeof(scores[0])};
+
+    std::cout << "Printing out array items : " << std::endl;
+    for( size_t i {0}; i < count; ++i){
+        std::cout << "scores[" << i << "]" << scores[i] << std::endl;
+    }
+
     return 0;
 }
