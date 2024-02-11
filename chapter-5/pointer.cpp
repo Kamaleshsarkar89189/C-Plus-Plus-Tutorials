@@ -105,4 +105,46 @@ Declaring Pointers
     message2[0] = 'T';
     std::cout << "Message2 : " << message2 << std::endl;
     
+//Program Memory Map Revisited
+
+    Virtual memory
+        
+        A trick that fools your program into thinking it is the only program running on your OS, and
+        all memory resources belong to it. Each program is abstracted into a process, and each process has access to the
+        memory range 0 ~ 2^N-1 where N is 32 on 32 bit systems and 64 on 64 bit systems.
+
+    Real Memory(RAM)            Virtual memory(2^N-1)
+
+    Memory Management Unit
+        The entire program is not loaded in  real memory by the CPU and MMU. Only parts 
+        that are about to be executed are loded. Making effective use of real memory, a valuable and lacking resource.
+
+    Virtual memory:
+     The memory map is a standard format defined by the OS. All program written for that OS must conform to it.
+     It is usually divided into some sections
+
+
+
+     Memory map What does it look like:
+
+        System
+        Stack   //local variables, function calls...
+        Heap  //Additional memory that can be queried for at run time
+        Data
+        Text
+    
+    
+
+    Dynamic Memory Allocation
+
+
+        Satck                                                       Heap
+    . Memory is finite                          . Memory is finite
+    . The developer isn't in full               . The developer is in full control of when 
+      full control of the memory lifetime         memory is allocated and when it's released
+    . Lifetime is controlled by the scope 
+      mechanism                                 . Lifetiem is controlled explicitly through new and delete operators
+
+
+      
 
