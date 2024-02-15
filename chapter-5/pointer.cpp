@@ -138,7 +138,7 @@ Declaring Pointers
     Dynamic Memory Allocation
 
 
-        Satck                                                       Heap
+        Stack                                                       Heap
     . Memory is finite                          . Memory is finite
     . The developer isn't in full               . The developer is in full control of when 
       full control of the memory lifetime         memory is allocated and when it's released
@@ -146,5 +146,118 @@ Declaring Pointers
       mechanism                                 . Lifetiem is controlled explicitly through new and delete operators
 
 
-      
+    Lifetime through scope mechanism
+    
+    #inclue<iostrem>
 
+    int main(int argc, char **argv)
+    {
+        {
+            int local_scope_var {33};
+        }
+        return 0;
+    }
+       
+
+    Allocate dynamic memory through 'new'
+
+    //Initialize the pointer with dynamic memory. Dynamic allocate memory at run time and make a pointer to it
+
+    int *p_number4{nullptr};
+    p_number4 = new int;
+        //Dynamically allocate space for a single int on the heap. This memory belongs to our program from now on.
+        //The system can't use it for anything else, untill we return it. After this line executes, we will have a
+        //valid memory location allocated. The size of the allocated memory will be such that it can store the type 
+        pointer to by the pointer
+    *p_number4 = 77; //Writting into dynamically allocated memory
+    std::cout << "Dynamically allocating memory : " << std::endl;
+    std::cout << "*p_number4 : " << std::endl; 
+
+    
+
+    //Stack lifetime VS heap lifetime
+     #include<iostrem>
+
+     int main(int argc, char **argv)
+     {
+        {
+            int local_var{33};
+            int *local_ptr_var = new int;
+        }
+        return 0;
+     }
+
+
+
+     Releasing and Resetting
+
+     int *p_number4{nullptr};
+     p_number4 = new int;
+
+
+     delete p_numbr4;
+     p_number4 = nullptr;
+
+
+     Initialize with 'new' upon pointer declaration
+     //It is also possible to initialize the pointer with a valid
+     //address up on declaration. Not with a nullptr
+
+     int *p_number5{ new int};  //Memory location contains junk value
+     int *p_number6{ new int (22)}; //Use direct inititialization
+     int *p_number7{ new int (23)}; //Use uniform inititlization
+
+
+    std::cout << std::endl;
+    std::cout << "Initialize with valid memory address at declaration : " << std::endl;
+    std::cout << "p_number5 : " << p_number5 << std::endl;
+    std::cout << "*p_number5 : " << *p_number5 << std::endl; //Junk value
+
+    std::cout << "p_number6 : " << p_number6 << std::endl; 
+    std::cout << "*p_number6 : " << *p_number6 << std::endl; 
+
+    std::cout << "p_number7 : " << p_number7 << std::endl; 
+    std::cout << "*p_number7 : " << *p_number7 << std::endl; 
+
+
+    //Remember to release the memory
+    delete p_number5;
+    p_number5 = nullptr;
+
+    delete p_number6;
+    p_number6 = nullptr;
+
+    delete p_number7;
+    p_number7 = nullptr;
+
+
+
+    //Calling delete twice on a pointer : BAD!
+
+    //Calling delete on a pointer twice will lead to undefined bahavior.
+    //Your program may even crash1 Avoid this like a plague!
+
+    p_number6 = new int {44};
+
+    //Use the pointer
+    std::cout << "deleting twice : BAD" << std::endl;
+    std::cout << "p_number6 : " << p_number6 << std::endl;
+    std::cout << "*p_number6 : " << *p_number6 << std::endl;
+
+    //Remember to release any dynamically allocated piece of memory
+    delete p_number6;
+    delete p_number6; //Anything can happen.
+    p_number6 = nullptr;
+
+    int *p_number8 = new int;
+
+    delete p_number8;
+    delete p_number8;
+
+    std::cout << "After deleting twice" << std::endl;
+    
+
+
+
+
+     
