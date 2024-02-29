@@ -30,10 +30,28 @@ Handling the exception
     feedback message to the user, and rendering your app n black/white.
     
 */
-for( size_t i{}; i < 10000000000000 ; ++i){
-    try{
-        int * lots_of_ints3 { new int[1000000000]};
-    }catch(std::exception& ex){
-        std::cout << "Cought exception ourselves : " << ex.what() << std::endl;
+// for( size_t i{}; i < 10000000000000 ; ++i){
+//     try{
+//         int * lots_of_ints3 { new int[1000000000]};
+//     }catch(std::exception& ex){
+//         std::cout << "Cought exception ourselves : " << ex.what() << std::endl;
+//     }
+// }
+
+/*
+std::nothrow
+//std::nothrow : ideal if you don't want exception thrown when new fails
+
+*/
+for(size_t i {}; i < 1000000000000; ++i){
+    int* lots_of_ints4 {new(std::nothrow) int[100000000]};
+
+    if(lots_of_ints4 == nullptr){
+        //Don't try to dereference and use lots_of_ints4 in here.
+        //You'll get UB. No memory has really been allocated here
+        //It failed and returned nullptr because of the std::nothrow setting
+        std::cout << "Memory allocation failed" << std::endl;
+    }else{
+        std::cout << "Memory allocation succeeded" << std::endl; 
     }
 }
