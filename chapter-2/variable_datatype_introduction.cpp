@@ -29,7 +29,7 @@ Variable Datatypes
             -->  Typically occupies 4 bytes or more in memory
 
     
-    Variable: A named piece of memory taht you use to store specific types of data.
+    Variable: A named piece of memory that you use to store specific types of data.
 
         //Variable may contain random garbage value . WARNING
         int elephant_count;
